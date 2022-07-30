@@ -3,67 +3,63 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import {useRouter} from "next/router";
-import logoImage from "../public/assets/EK.png"
+import { useRouter } from "next/router";
+import logoImage from "../public/assets/EK.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [shadow, setShadow] = useState(false);
   const [navBackground, setNavBackground] = useState("#D9D9D9");
   const [linkColor, setLinkColor] = useState("#1f2937");
   const router = useRouter();
 
   useEffect(() => {
-    if( router.asPath === "/cars" ||
-    router.asPath === "/restaurant" || 
-    router.asPath === "/loan" || 
-    router.asPath === "/seventhSeal" || 
-    router.asPath === "/ucrypto"
-    ){
-      setNavBackground("transparent")
-      setLinkColor("#D9D9D9")
-    }else{
-      setNavBackground("#D9D9D9")
-      setLinkColor("#1f2937")
+    if (
+      router.asPath === "/cars" ||
+      router.asPath === "/restaurant" ||
+      router.asPath === "/loan" ||
+      router.asPath === "/seventhSeal" ||
+      router.asPath === "/ucrypto"
+    ) {
+      setNavBackground("transparent");
+      setLinkColor("#D9D9D9");
+    } else {
+      setNavBackground("#D9D9D9");
+      setLinkColor("#1f2937");
     }
-  }, [router])
-
+  }, [router]);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
-  // useEffect(() => {
-  //   const handleShadow = () => {
-  //     if (window.scrollY >= 90) {
-  //       setShadow(true);
-  //     } else {
-  //       setShadow(false);
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleShadow);
-  // });
+  useEffect(() => {
+    const handleShadow = () => {
+      if (window.scrollY >= 90) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+    window.addEventListener("scroll", handleShadow);
+  });
 
   return (
     <div
-    style={{backgroundColor: `${navBackground}`}}
-      className=
-        // shadow
-           "fixed w-full h-20 shadow-xl z-[100]"
-          //  "fixed w-full h-20 z-[100]"
-      
+      style={{ backgroundColor: `${navBackground}` }}
+      className={
+        shadow
+          ? "fixed w-full h-20 shadow-xl z-[100]"
+          : "fixed w-full h-20 z-[100]"
+      }
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/">
-          <Image
-            src={logoImage}
-            alt="Logo"
-            width="110"
-            height="50"
-          />
+          <Image src={logoImage} alt="Logo" width="110" height="50" />
         </Link>
 
         <div>
-          <ul style={{color: `${linkColor}`}} className="hidden md:flex">
+          <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
             <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
             </Link>
@@ -104,12 +100,7 @@ const Navbar = () => {
         >
           <div>
             <div className="flex w-full items-center justify-between">
-            <Image
-            src={logoImage}
-            alt="Logo"
-            width="150"
-            height="80"
-          />
+              <Image src={logoImage} alt="Logo" width="150" height="80" />
               <div
                 className="rounded-full shadow-lg shadow-blue-500 p-3 cursor-pointer"
                 onClick={handleNav}
