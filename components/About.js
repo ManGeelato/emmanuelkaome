@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BsFillPersonLinesFill } from 'react-icons/bs';
+import aboutImage from "../public/assets/3411109.jpg"
 
 const About = () => {
   return (
@@ -39,7 +40,7 @@ const About = () => {
         </div>
         <div className="w-full h-auto m-auto shadow-xl shadow-blue-500 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration">
           <Image
-            src="/../public/assets/3411109.jpg"
+            src={aboutImage}
             alt="Logo"
             width="600"
             height="500"
