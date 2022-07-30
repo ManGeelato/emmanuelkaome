@@ -8,7 +8,6 @@ import logoImage from "../public/assets/EK.png"
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [shadow, setShadow] = useState(false);
   const [navBackground, setNavBackground] = useState("#D9D9D9");
   const [linkColor, setLinkColor] = useState("#1f2937");
   const router = useRouter();
@@ -33,33 +32,33 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-  useEffect(() => {
-    const handleShadow = () => {
-      if (window.scrollY >= 90) {
-        setShadow(true);
-      } else {
-        setShadow(false);
-      }
-    };
-    window.addEventListener("scroll", handleShadow);
-  });
+  // useEffect(() => {
+  //   const handleShadow = () => {
+  //     if (window.scrollY >= 90) {
+  //       setShadow(true);
+  //     } else {
+  //       setShadow(false);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleShadow);
+  // });
 
   return (
     <div
     style={{backgroundColor: `${navBackground}`}}
-      className={
-        shadow
-          ? "fixed w-full h-20 shadow-xl z-[100]"
-          : "fixed w-full h-20 z-[100]"
-      }
+      className=
+        // shadow
+           "fixed w-full h-20 shadow-xl z-[100]"
+          //  "fixed w-full h-20 z-[100]"
+      
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/">
           <Image
             src={logoImage}
             alt="Logo"
-            width="150"
-            height="80"
+            width="110"
+            height="50"
           />
         </Link>
 
@@ -105,12 +104,12 @@ const Navbar = () => {
         >
           <div>
             <div className="flex w-full items-center justify-between">
-              <Image
-                src="/../public/assets/EK.png"
-                width="87"
-                height="35"
-                alt="logo"
-              />
+            <Image
+            src={logoImage}
+            alt="Logo"
+            width="150"
+            height="80"
+          />
               <div
                 className="rounded-full shadow-lg shadow-blue-500 p-3 cursor-pointer"
                 onClick={handleNav}
