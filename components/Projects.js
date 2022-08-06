@@ -7,6 +7,7 @@ import carsImage from "../public/assets/projects/cars.PNG";
 import loanImage from "../public/assets/projects/loan.PNG";
 import seventhImage from "../public/assets/projects/7thseal.PNG";
 import locosImage from "../public/assets/projects/restaurant.PNG";
+import movieImage from "../public/assets/projects/movies.PNG";
 
 const Projects = () => {
   return (
@@ -41,6 +42,11 @@ const Projects = () => {
             title="Locos Pollos"
             backgroundImg={locosImage}
             projectUrl="/restaurant"
+          />
+          <ProjectItem
+            title="MoviePro"
+            backgroundImg={movieImage}
+            projectUrl="/movie"
           />
         </div>
       </div>
