@@ -63,7 +63,7 @@ const Contact = () => {
                       className="border-2 rounded-lg p-3 flex border-blue-400"
                       type="text"
                       placeholder="Emmanuel Kaome"
-                      readonly="readonly"
+                      readOnly="readonly"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -74,7 +74,7 @@ const Contact = () => {
                       className="border-2 rounded-lg p-3 flex border-blue-400"
                       type="number"
                       placeholder="+27(0) 67 617 2593"
-                      readonly="readonly"
+                      readOnly="readonly"
                     />
                   </div>
                 </div>
@@ -85,7 +85,7 @@ const Contact = () => {
                     className="border-2 rounded-lg p-3 flex border-blue-400"
                     type="email"
                     placeholder="emmanuelkaome@protonmail.com / ekawome6@gmail.com"
-                    readonly="readonly"
+                    readOnly="readonly"
                   />
                 </div>
               </form>

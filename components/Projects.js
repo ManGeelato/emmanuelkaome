@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import ProjectItem from "./ProjectItem";
 import cryptoImage from "../public/assets/projects/cryptoC.PNG";
 import carsImage from "../public/assets/projects/cars.PNG";
